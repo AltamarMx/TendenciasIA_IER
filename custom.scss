@@ -1,0 +1,44 @@
+/*-- scss:defaults --*/
+$font-family-sans-serif: "Source Sans Pro", "Helvetica Neue", Helvetica, sans-serif;
+$presentation-heading-font: $font-family-sans-serif;
+$presentation-heading-font-weight: 700;
+$presentation-heading-color: #0b2545;
+$link-color: #1b998b;
+
+/*-- scss:rules --*/
+.reveal section.portada {
+  text-align: left;
+  color: #e8f1f2;
+  padding-left: 0.5em;
+
+  .evento {
+    color: #ffd166;
+    font-size: 0.75em;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-top: 1.2em;
+  }
+  .titulo {
+    color: #ffffff;
+    font-size: 2em;
+    font-weight: 700;
+    line-height: 1.1;
+    margin-top: 0.4em;
+    max-width: 90%;
+  }
+  .subtitulo {
+    color: #9ee6dc;
+    font-size: 1.15em;
+    margin-top: 0.5em;
+  }
+  .autor {
+    margin-top: 1.6em;
+    padding-left: 0.8em;
+    border-left: 4px solid #ffd166;
+    font-size: 0.8em;
+    line-height: 1.4;
+  }
+  .correo { color: #9ee6dc; font-size: 0.85em; }
+}
+

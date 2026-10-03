@@ -1,0 +1,34 @@
+---
+pagetitle: "Tendencias de la IA en la gestión energética de edificios"
+author: "Dr. Guillermo Barrios del Valle"
+lang: es
+format:
+  revealjs:
+    theme: [default, custom.scss]
+    slide-number: true
+    hash-type: number
+    transition: fade
+    progress: true
+    controls: true
+    footer: "CNEER 2026 · Tendencias de la IA en la gestión energética de edificios"
+---
+
+## {.portada background-gradient="linear-gradient(135deg, #0b2545 0%, #13315c 55%, #1b998b 100%)"}
+
+::: {.evento}
+CNEER 2026 · Conferencia
+:::
+
+::: {.titulo}
+Tendencias de la IA en la gestión energética de edificios
+:::
+
+::: {.subtitulo}
+Gemelos digitales, control inteligente y agentes
+:::
+
+::: {.autor}
+**Dr. Guillermo Barrios del Valle**<br>
+Instituto de Energías Renovables, UNAM<br>
+<span class="correo">gbv@ier.unam.mx</span>
+:::
