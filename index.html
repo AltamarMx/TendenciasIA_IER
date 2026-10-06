@@ -29,7 +29,7 @@
       vertical-align: middle;
     }
   </style>
-  <link rel="stylesheet" href="index_files/libs/revealjs/dist/theme/quarto-5c749174268fd0c989e0b9f72e2d6221.css">
+  <link rel="stylesheet" href="index_files/libs/revealjs/dist/theme/quarto-51fec4a873fdd921f3a3a56c292f90ff.css">
   <link href="index_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="index_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="index_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -140,6 +140,373 @@
 </div>
 <div class="autor">
 <p><strong>Dr.&nbsp;Guillermo Barrios del Valle</strong><br> Instituto de Energías Renovables, UNAM<br> <span class="correo">gbv@ier.unam.mx</span></p>
+</div>
+</section>
+<section class="slide level2">
+<h2>La energía se gana diseñando y operando</h2>
+<div class="definicion">
+<p>Los edificios consumen cerca de <strong>un tercio de la energía mundial</strong>; en el México cálido, el aire acondicionado domina el consumo y crece con cada ola de calor.</p>
+</div>
+<div class="columns">
+<div class="column" style="width:33%;">
+<div class="cifra">
+<p><span class="numero">17–24 %</span> <span class="texto">menos HVAC con control por ocupación, medido en campo</span></p>
+</div>
+</div><div class="column" style="width:33%;">
+<div class="cifra">
+<p><span class="numero">24–58 %</span> <span class="texto">de ahorro de HVAC en hoteles, según sensor y clima</span></p>
+</div>
+</div><div class="column" style="width:33%;">
+<div class="cifra">
+<p><span class="numero">22–50 %</span> <span class="texto">menos electricidad y gas en oficinas pequeñas</span></p>
+</div>
+</div></div>
+<div class="idea">
+<p>La IA ayuda en ambos frentes: <strong>diseño bioclimático</strong> y <strong>operación</strong>. Esta charla se enfoca en operar.</p>
+</div>
+<div class="fuente">
+<p>Jung &amp; Jazizadeh, <em>Building and Environment</em> (2019) · estudios LSU/PNNL de controles ocupante-céntricos · estudio experimental lado a lado (2023)</p>
+</div>
+<!--
+## ¿Qué es un gemelo digital?
+
+::: {.definicion}
+Réplica **virtual** de un sistema físico —un edificio— que se mantiene **sincronizada con datos medidos** y permite **simular, predecir y optimizar** su comportamiento.
+:::
+
+:::: {.columns}
+
+::: {.column width="33%"}
+::: {.concepto}
+#### Objeto físico
+El edificio real: envolvente, clima, ocupación y sus sistemas (HVAC, iluminación).
+:::
+:::
+
+::: {.column width="33%"}
+::: {.concepto}
+#### Modelo virtual
+Modelo térmico-energético calibrado: EnergyPlus, caja gris o aprendizaje automático.
+:::
+:::
+
+::: {.column width="33%"}
+::: {.concepto}
+#### Flujo de datos
+Sensores y BMS actualizan el modelo; el modelo retroalimenta la operación.
+:::
+:::
+
+::::
+
+::: {.idea}
+No es un render 3D ni una simulación estática: **vive y se actualiza** con el edificio.
+:::
+-->
+</section>
+<section class="slide level2">
+<h2>Simulación, sombra digital y gemelo digital</h2>
+<div class="definicion">
+<p>La diferencia está en el <strong>flujo de datos</strong> entre el sistema físico y su modelo virtual.</p>
+</div>
+<div class="columns">
+<div class="column" style="width:33%;">
+<section class="concepto">
+<h4>Simulación</h4>
+<div class="flujo">
+<p><span class="nodo">Físico</span> <span class="manual">⇢</span> <span class="nodo">Virtual</span></p>
+</div>
+<p>Evalúa escenarios con datos de entrada fijos; toda actualización es <strong>manual</strong>.</p>
+</section>
+</div><div class="column" style="width:33%;">
+<section class="concepto">
+<h4>Sombra digital</h4>
+<div class="flujo">
+<p><span class="nodo">Físico</span> <span class="auto">→</span> <span class="nodo">Virtual</span></p>
+</div>
+<p>Los datos medidos actualizan el modelo <strong>automáticamente</strong>, pero este no actúa sobre el edificio.</p>
+</section>
+</div><div class="column" style="width:33%;">
+<section class="concepto destacado">
+<h4>Gemelo digital</h4>
+<div class="flujo">
+<p><span class="nodo">Físico</span> <span class="auto">⇄</span> <span class="nodo">Virtual</span></p>
+</div>
+<p>Flujo <strong>bidireccional y automático</strong>: el modelo retroalimenta la operación del edificio.</p>
+</section>
+</div></div>
+<div class="idea">
+<p>Solo hay gemelo digital cuando el modelo <strong>actúa de vuelta</strong> sobre el sistema físico.</p>
+</div>
+<!--
+## ¿Qué es un agente?
+
+::: {.definicion}
+Sistema de IA que **percibe** su entorno, **razona** sobre un objetivo y **actúa** de forma autónoma usando herramientas.
+:::
+
+:::: {.columns}
+
+::: {.column width="33%"}
+::: {.concepto}
+#### 1 · Percibe
+Lee sensores, clima, tarifas eléctricas y ocupación en tiempo real.
+:::
+:::
+
+::: {.column width="33%"}
+::: {.concepto}
+#### 2 · Razona
+Planifica con LLM o control óptimo para cumplir metas de confort y energía.
+:::
+:::
+
+::: {.column width="33%"}
+::: {.concepto}
+#### 3 · Actúa
+Ajusta consignas, acciona equipos y evalúa escenarios en el gemelo digital.
+:::
+:::
+
+::::
+
+::: {.idea}
+Juntos: el gemelo digital es el **campo de pruebas**; el agente, el **operador autónomo**.
+:::
+-->
+</section>
+<section class="slide level2">
+<h2>Un agente que ya conoces</h2>
+<div class="definicion">
+<p>Cada vez que ChatGPT o Claude <strong>busca en la web, ejecuta código o lee un archivo</strong> por ti, estás usando un agente. El mecanismo detrás se llama <strong>tool calling</strong>.</p>
+</div>
+<div class="flujo">
+<p><span class="nodo">Petición</span> <span class="auto">→</span> <span class="nodo">LLM</span> <span class="auto">→</span> <span class="nodo">Herramienta</span> <span class="auto">→</span> <span class="nodo">LLM</span> <span class="auto">→</span> <span class="nodo">Respuesta</span></p>
+</div>
+<div class="columns">
+<div class="column" style="width:33%;">
+<section class="concepto">
+<h4>1 · Pide, no ejecuta</h4>
+<p>El LLM emite una llamada estructurada (JSON): qué herramienta necesita y con qué argumentos.</p>
+</section>
+</div><div class="column" style="width:33%;">
+<section class="concepto">
+<h4>2 · Algo determinista ejecuta</h4>
+<p>Un programa corre la herramienta —con permisos y límites— y devuelve el resultado.</p>
+</section>
+</div><div class="column" style="width:33%;">
+<section class="concepto">
+<h4>3 · El LLM cierra el lazo</h4>
+<p>Interpreta el resultado y decide el siguiente paso, o redacta la respuesta final.</p>
+</section>
+</div></div>
+<div class="idea">
+<p>Recuerden este patrón: <strong>el LLM decide, un sistema determinista ejecuta</strong>. Así también se opera un edificio.</p>
+</div>
+</section>
+<section class="slide level2">
+<h2>¿Qué es un wearable?</h2>
+<div class="definicion">
+<p>Sensores <strong>vestibles</strong> que miden fisiología continua sin interrumpir a la persona. El ejemplo que quizá ya conocen: <strong>Oura</strong>.</p>
+</div>
+<div class="columns">
+<div class="column" style="width:42%;">
+<p><img data-src="img/oura.png" class="foto" alt="Anillo Oura: versión Gold en la mano ($499) y versión Silver mostrando los sensores internos"></p>
+</div><div class="column" style="width:58%;">
+<section class="concepto compacto">
+<h4>Qué mide</h4>
+<p>Temperatura de piel <strong>cada minuto</strong> (0.13 °C), FC, HRV y SpO₂ — desde el dedo.</p>
+</section>
+<section class="concepto compacto destacado">
+<h4>Por qué nos importa</h4>
+<p>Justo las variables que piden los modelos de confort térmico personal.</p>
+</section>
+<section class="concepto compacto">
+<h4>El problema</h4>
+<p><strong>349–499 USD + suscripción</strong>; los datos crudos viven en la nube del fabricante.</p>
+</section>
+</div></div>
+<div class="idea">
+<p>Medir el confort desde el cuerpo <strong>ya es tecnología de consumo</strong>. Falta hacerla abierta y barata.</p>
+</div>
+<div class="fuente">
+<p>Validación del fabricante: 92 % de acuerdo con un sensor de investigación en uso real · imagen: ouraring.com</p>
+</div>
+</section>
+<section class="slide level2">
+<h2>El reto: barato, exacto y libre</h2>
+<div class="definicion">
+<p>El lazo —wearable + agente + gemelo operando el edificio— <strong>ya existe en la literatura</strong>. Llevarlo a nuestras aulas y viviendas exige que cada pieza cumpla tres condiciones a la vez.</p>
+</div>
+<div class="columns">
+<div class="column" style="width:33%;">
+<section class="concepto">
+<h4>Barato</h4>
+<p>Cientos de pesos por nodo, no decenas de miles: que un grupo, una escuela o una vivienda pueda tener varios.</p>
+</section>
+</div><div class="column" style="width:33%;">
+<section class="concepto">
+<h4>Exacto</h4>
+<p>Sensores calibrados contra una referencia y deriva controlada: datos que resisten la revisión por pares.</p>
+</section>
+</div><div class="column" style="width:33%;">
+<section class="concepto destacado">
+<h4>Libre</h4>
+<p>Poder usar, estudiar, modificar y compartir cada pieza — sin suscripciones ni nubes ajenas.</p>
+</section>
+</div></div>
+<div class="idea">
+<p>El resto de la charla: construir este lazo <strong>sobre la mesa</strong>, con hardware de cientos de pesos y un LLM local.</p>
+</div>
+</section>
+<section class="slide level2">
+<h2>¿Qué es el software libre?</h2>
+<div class="definicion">
+<p>Software cuya licencia garantiza <strong>cuatro libertades</strong>: usarlo, estudiarlo, modificarlo y compartirlo. El código fuente es público y la comunidad lo audita y lo mejora.</p>
+</div>
+<div class="columns">
+<div class="column" style="width:33%;">
+<section class="concepto">
+<h4>Ya lo usas a diario</h4>
+<p>Linux (servidores, Android), Firefox, Python, R. La ciencia moderna corre sobre software libre.</p>
+</section>
+</div><div class="column" style="width:33%;">
+<section class="concepto">
+<h4>En esta charla</h4>
+<p>Ollama y los modelos abiertos, ESP-IDF y Arduino, Home Assistant, EnergyPlus — y Quarto, con el que está hecha esta presentación.</p>
+</section>
+</div><div class="column" style="width:33%;">
+<section class="concepto destacado">
+<h4>Por qué importa aquí</h4>
+<p>Sin licencias por nodo ni nubes obligatorias: los datos y el control <strong>se quedan en el edificio</strong>.</p>
+</section>
+</div></div>
+<div class="idea">
+<p>Libre no significa solo gratis: significa <strong>control, transparencia y reproducibilidad</strong>.</p>
+</div>
+</section>
+<section class="slide level2">
+<h2>El ESP32: el cuerpo del agente</h2>
+<div class="definicion">
+<p>Microcontrolador con Wi-Fi de <strong>100–350 pesos</strong>, el estándar de facto del IoT abierto. Con TinyML maduro, pone los <strong>sentidos y las manos</strong> del agente en el edificio.</p>
+</div>
+<div class="columns">
+<div class="column" style="width:33%;">
+<section class="concepto">
+<h4>Sentidos</h4>
+<p>Temperatura y humedad (±0.2 °C), CO₂, presencia por radar mmWave, corriente eléctrica, vibración y sonido — sensores de decenas a cientos de pesos.</p>
+</section>
+</div><div class="column" style="width:33%;">
+<section class="concepto">
+<h4>Reflejos (TinyML)</h4>
+<p>Modelos de &lt; 100 kB corriendo <strong>dentro del chip</strong>: ocupación, desagregación de consumo (NILM), detección de fallas de HVAC por vibración.</p>
+</section>
+</div><div class="column" style="width:33%;">
+<section class="concepto">
+<h4>Manos</h4>
+<p>Control IR del minisplit (casi cualquier marca), relés y actuadores — <strong>siempre con límites deterministas en el firmware</strong>.</p>
+</section>
+</div></div>
+<div class="idea">
+<p>Un nodo completo de sensado + inferencia + actuación cuesta <strong>menos que una visita técnica</strong>.</p>
+</div>
+</section>
+<section class="slide level2">
+<h2>Tres demos</h2>
+<p><span class="insignia">En vivo</span></p>
+<div class="definicion">
+<p>Un ESP32 conectado por USB a esta laptop. Tres peldaños: de juguete a <strong>operador del edificio</strong>.</p>
+</div>
+<div class="columns">
+<div class="column" style="width:33%;">
+<section class="concepto">
+<h4>1 · Stories</h4>
+<p>Un transformer de 260 mil parámetros <strong>generando cuentos dentro del chip</strong>, a ~20 tokens por segundo. <em>Puede computar.</em></p>
+</section>
+</div><div class="column" style="width:33%;">
+<section class="concepto">
+<h4>2 · El barista</h4>
+<p>8.9 millones de parámetros, experto en espresso, <strong>100 % offline</strong> en el ESP32. <em>Puede saber de un dominio.</em></p>
+</section>
+</div><div class="column" style="width:33%;">
+<section class="concepto destacado">
+<h4>3 · El operador de color</h4>
+<p>Un LLM local (Ollama) <strong>enciende, apaga y colorea</strong> el LED del ESP32 por tool calling; el firmware valida cada orden. <em>Puede operar.</em></p>
+</section>
+</div></div>
+<div class="idea">
+<p>La tercera es el patrón completo: <strong>el LLM decide, el firmware ejecuta</strong> — hoy un LED, mañana el minisplit. Vamos a la terminal →</p>
+</div>
+</section>
+<section class="slide level2">
+<h2>Del anillo cerrado al reloj abierto</h2>
+<div class="definicion">
+<p>Para investigar y controlar necesitamos lo que el anillo no da: <strong>datos crudos, locales y baratos</strong>.</p>
+</div>
+<div class="columns">
+<div class="column" style="width:33%;">
+<section class="concepto">
+<h4>Cerrado</h4>
+<p>Oura, Whoop, Apple Watch: excelente fisiología, pero datos en la nube del fabricante y suscripciones.</p>
+</section>
+</div><div class="column" style="width:33%;">
+<section class="concepto">
+<h4>Intermedio</h4>
+<p><strong>Cozie</strong>: app abierta de encuestas de confort que corre sobre Apple Watch y Fitbit.</p>
+</section>
+</div><div class="column" style="width:33%;">
+<section class="concepto destacado">
+<h4>Abierto — hecho en el IER</h4>
+<p>Smartwatch en <em>HardwareX</em> 2025: XIAO ESP32C3, temperatura de piel + FC + encuestas horarias de confort. <strong>49 USD, GPLv3.</strong></p>
+</section>
+</div></div>
+<div class="idea">
+<p>Los modelos personales ahorran <strong>~30 % de HVAC</strong> (hasta 45 % en verano) — y el wearable transmite la <em>preferencia</em>, no la fisiología.</p>
+</div>
+<div class="fuente">
+<p><em>HardwareX</em> 2025 (DOI 10.1016/j.ohx.2025.e00633) · Tartarini et al., <em>Indoor Air</em> (2022): F1 ≈ 0.78 con ~300 votos · pulsera de 3 puntos: 93.9 % para control HVAC (KIST)</p>
+</div>
+</section>
+<section class="slide level2">
+<h2>La arquitectura para México</h2>
+<div class="definicion">
+<p>Todas las piezas existen y son abiertas. Falta <strong>ensamblarlas aquí</strong>: con nuestros climas, nuestras tarifas y nuestra vivienda.</p>
+</div>
+<div class="flujo">
+<p><span class="nodo">Wearable abierto</span> <span class="auto">→</span> <span class="nodo">Nodos ESP32</span> <span class="auto">⇄</span> <span class="nodo">LLM local</span> <span class="auto">⇄</span> <span class="nodo">Gemelo digital</span> <span class="auto">→</span> <span class="nodo">HVAC</span></p>
+</div>
+<div class="columns">
+<div class="column" style="width:33%;">
+<section class="concepto">
+<h4>Datos abiertos</h4>
+<p>No hay conjuntos medidos de confort, consumo y ocupación en vivienda cálida mexicana. Quien los publique, define el campo.</p>
+</section>
+</div><div class="column" style="width:33%;">
+<section class="concepto">
+<h4>Voz en español</h4>
+<p>ESP-SR no tiene palabras de activación ni comandos en español de primera clase. Contribución directa a la comunidad global.</p>
+</section>
+</div><div class="column" style="width:33%;">
+<section class="concepto">
+<h4>Comunidad</h4>
+<p>No hay nodo mexicano en TinyML4D. Docencia con EnergyPlus/OpenStudio + hardware de cientos de pesos.</p>
+</section>
+</div></div>
+<div class="idea">
+<p><strong>El LLM decide, el firmware valida, el ocupante manda.</strong> · gbv@ier.unam.mx</p>
+</div>
+</section>
+<section class="slide level2">
+<h2>¿Cómo lo aprendemos?</h2>
+<div class="definicion">
+<p>Programación, terminal, electrónica, datos, documentación, cultura libre: <strong>habilidades especializadas que piden una motivación especial</strong> — un posgrado… o un buen proyecto en equipo.</p>
+</div>
+
+<img data-src="img/cansat.png" class="foto quarto-figure quarto-figure-center r-stretch" style="width:55.0%" alt="Equipo de estudiantes en el concurso CanSat viendo descender su satélite"><div class="idea">
+<p>Un <strong>CanSat</strong> —construir, programar y lanzar un satélite tamaño lata— ejercita todo. <strong>Participen.</strong> · gbv@ier.unam.mx</p>
+</div>
+<div class="fuente">
+<p>Imagen: concurso CanSat · CNEER / IER-UNAM</p>
 </div>
 
 </section>
@@ -357,6 +724,30 @@
           RevealZoom
         ]
       });
+    </script>
+    <script>
+    // Clic en una imagen .foto → se amplía en un overlay; clic o Esc → se cierra.
+    document.addEventListener('click', function (e) {
+      const abierta = document.querySelector('.foto-overlay');
+      if (abierta) { abierta.remove(); return; }
+      const img = e.target.closest('img.foto');
+      if (!img) return;
+      const overlay = document.createElement('div');
+      overlay.className = 'foto-overlay';
+      const grande = document.createElement('img');
+      grande.src = img.src;
+      grande.alt = img.alt || '';
+      overlay.appendChild(grande);
+      document.body.appendChild(overlay);
+    });
+    document.addEventListener('keydown', function (e) {
+      if (e.key !== 'Escape') return;
+      const abierta = document.querySelector('.foto-overlay');
+      if (abierta) {
+        abierta.remove();
+        e.stopImmediatePropagation();
+      }
+    }, true);
     </script>
     <script id="quarto-html-after-body" type="application/javascript">
       window.document.addEventListener("DOMContentLoaded", function (event) {
