@@ -73,7 +73,6 @@ La IA ayuda en ambos frentes: **diseño bioclimático** y **operación**. Esta c
 Jung & Jazizadeh, *Building and Environment* (2019) · estudios LSU/PNNL de controles ocupante-céntricos · estudio experimental lado a lado (2023)
 :::
 
-<!--
 ## ¿Qué es un gemelo digital?
 
 ::: {.definicion}
@@ -84,21 +83,21 @@ Réplica **virtual** de un sistema físico —un edificio— que se mantiene **s
 
 ::: {.column width="33%"}
 ::: {.concepto}
-#### Objeto físico
+[Objeto físico]{.cabeza}
 El edificio real: envolvente, clima, ocupación y sus sistemas (HVAC, iluminación).
 :::
 :::
 
 ::: {.column width="33%"}
 ::: {.concepto}
-#### Modelo virtual
+[Modelo virtual]{.cabeza}
 Modelo térmico-energético calibrado: EnergyPlus, caja gris o aprendizaje automático.
 :::
 :::
 
 ::: {.column width="33%"}
 ::: {.concepto}
-#### Flujo de datos
+[Flujo de datos]{.cabeza}
 Sensores y BMS actualizan el modelo; el modelo retroalimenta la operación.
 :::
 :::
@@ -108,7 +107,6 @@ Sensores y BMS actualizan el modelo; el modelo retroalimenta la operación.
 ::: {.idea}
 No es un render 3D ni una simulación estática: **vive y se actualiza** con el edificio.
 :::
--->
 
 ## Simulación, sombra digital y gemelo digital
 
@@ -120,7 +118,7 @@ La diferencia está en el **flujo de datos** entre el sistema físico y su model
 
 ::: {.column width="33%"}
 ::: {.concepto}
-#### Simulación
+[Simulación]{.cabeza}
 
 ::: {.flujo}
 [Físico]{.nodo} [⇢]{.manual} [Virtual]{.nodo}
@@ -132,7 +130,7 @@ Evalúa escenarios con datos de entrada fijos; toda actualización es **manual**
 
 ::: {.column width="33%"}
 ::: {.concepto}
-#### Sombra digital
+[Sombra digital]{.cabeza}
 
 ::: {.flujo}
 [Físico]{.nodo} [→]{.auto} [Virtual]{.nodo}
@@ -144,7 +142,7 @@ Los datos medidos actualizan el modelo **automáticamente**, pero este no actúa
 
 ::: {.column width="33%"}
 ::: {.concepto .destacado}
-#### Gemelo digital
+[Gemelo digital]{.cabeza}
 
 ::: {.flujo}
 [Físico]{.nodo} [⇄]{.auto} [Virtual]{.nodo}
@@ -160,7 +158,6 @@ Flujo **bidireccional y automático**: el modelo retroalimenta la operación del
 Solo hay gemelo digital cuando el modelo **actúa de vuelta** sobre el sistema físico.
 :::
 
-<!--
 ## ¿Qué es un agente?
 
 ::: {.definicion}
@@ -171,21 +168,21 @@ Sistema de IA que **percibe** su entorno, **razona** sobre un objetivo y **actú
 
 ::: {.column width="33%"}
 ::: {.concepto}
-#### 1 · Percibe
+[1 · Percibe]{.cabeza}
 Lee sensores, clima, tarifas eléctricas y ocupación en tiempo real.
 :::
 :::
 
 ::: {.column width="33%"}
 ::: {.concepto}
-#### 2 · Razona
+[2 · Razona]{.cabeza}
 Planifica con LLM o control óptimo para cumplir metas de confort y energía.
 :::
 :::
 
 ::: {.column width="33%"}
 ::: {.concepto}
-#### 3 · Actúa
+[3 · Actúa]{.cabeza}
 Ajusta consignas, acciona equipos y evalúa escenarios en el gemelo digital.
 :::
 :::
@@ -195,7 +192,6 @@ Ajusta consignas, acciona equipos y evalúa escenarios en el gemelo digital.
 ::: {.idea}
 Juntos: el gemelo digital es el **campo de pruebas**; el agente, el **operador autónomo**.
 :::
--->
 
 ## Un agente que ya conoces
 
@@ -211,21 +207,21 @@ Cada vez que ChatGPT o Claude **busca en la web, ejecuta código o lee un archiv
 
 ::: {.column width="33%"}
 ::: {.concepto}
-#### 1 · Pide, no ejecuta
+[1 · Pide, no ejecuta]{.cabeza}
 El LLM emite una llamada estructurada (JSON): qué herramienta necesita y con qué argumentos.
 :::
 :::
 
 ::: {.column width="33%"}
 ::: {.concepto}
-#### 2 · Algo determinista ejecuta
+[2 · Algo determinista ejecuta]{.cabeza}
 Un programa corre la herramienta —con permisos y límites— y devuelve el resultado.
 :::
 :::
 
 ::: {.column width="33%"}
 ::: {.concepto}
-#### 3 · El LLM cierra el lazo
+[3 · El LLM cierra el lazo]{.cabeza}
 Interpreta el resultado y decide el siguiente paso, o redacta la respuesta final.
 :::
 :::
@@ -250,17 +246,17 @@ Sensores **vestibles** que miden fisiología continua sin interrumpir a la perso
 
 ::: {.column width="58%"}
 ::: {.concepto .compacto}
-#### Qué mide
+[Qué mide]{.cabeza}
 Temperatura de piel **cada minuto** (0.13 °C), FC, HRV y SpO₂ — desde el dedo.
 :::
 
 ::: {.concepto .compacto .destacado}
-#### Por qué nos importa
+[Por qué nos importa]{.cabeza}
 Justo las variables que piden los modelos de confort térmico personal.
 :::
 
 ::: {.concepto .compacto}
-#### El problema
+[El problema]{.cabeza}
 **349–499 USD + suscripción**; los datos crudos viven en la nube del fabricante.
 :::
 :::
@@ -275,31 +271,67 @@ Medir el confort desde el cuerpo **ya es tecnología de consumo**. Falta hacerla
 Validación del fabricante: 92 % de acuerdo con un sensor de investigación en uso real · imagen: ouraring.com
 :::
 
+## El lazo completo
+
+::: {.definicion}
+Los tres conceptos, ensamblados: el **wearable** mide a la persona, el **agente** razona y actúa sobre el HVAC, y el **gemelo digital** es donde se entrena y prueba antes de tocar el edificio real.
+:::
+
+::: {.flujo}
+[Wearable + sensores]{.nodo} [→]{.auto} [Agente LLM]{.nodo} [→]{.auto} [HVAC]{.nodo} [→]{.auto} [Edificio]{.nodo} [⟲]{.auto}
+:::
+
+::: {.flujo}
+[Agente LLM]{.nodo} [⇄]{.auto} [Gemelo digital]{.nodo}
+:::
+
+:::: {.columns}
+
+::: {.column width="50%"}
+::: {.concepto}
+[Ya funciona en la literatura]{.cabeza}
+Agentes de control entrenados dentro de gemelos digitales calibrados: **10–35 % menos demanda de HVAC** manteniendo la temperatura en ±0.5 °C.
+:::
+:::
+
+::: {.column width="50%"}
+::: {.concepto}
+[Ya es un campo propio]{.cabeza}
+Los agentes LLM para operación de HVAC y gestión energética tienen revisiones y surveys dedicados desde 2025.
+:::
+:::
+
+::::
+
+::: {.fuente}
+Revisión gemelos digitales + LLMs en edificios (2025) · revisión crítica de LLMs para HVAC (arXiv:2609.05314) · survey en *Energy & Buildings* (2025)
+:::
+
 ## El reto: barato, exacto y libre
 
 ::: {.definicion}
-El lazo —wearable + agente + gemelo operando el edificio— **ya existe en la literatura**. Llevarlo a nuestras aulas y viviendas exige que cada pieza cumpla tres condiciones a la vez.
+El lazo ya existe en la literatura. Llevarlo a nuestras aulas, viviendas y edificios exige que cada pieza cumpla **tres condiciones a la vez**.
 :::
 
 :::: {.columns}
 
 ::: {.column width="33%"}
 ::: {.concepto}
-#### Barato
+[Barato]{.cabeza}
 Cientos de pesos por nodo, no decenas de miles: que un grupo, una escuela o una vivienda pueda tener varios.
 :::
 :::
 
 ::: {.column width="33%"}
 ::: {.concepto}
-#### Exacto
+[Exacto]{.cabeza}
 Sensores calibrados contra una referencia y deriva controlada: datos que resisten la revisión por pares.
 :::
 :::
 
 ::: {.column width="33%"}
 ::: {.concepto .destacado}
-#### Libre
+[Libre]{.cabeza}
 Poder usar, estudiar, modificar y compartir cada pieza — sin suscripciones ni nubes ajenas.
 :::
 :::
@@ -320,21 +352,21 @@ Software cuya licencia garantiza **cuatro libertades**: usarlo, estudiarlo, modi
 
 ::: {.column width="33%"}
 ::: {.concepto}
-#### Ya lo usas a diario
+[Ya lo usas a diario]{.cabeza}
 Linux (servidores, Android), Firefox, Python, R. La ciencia moderna corre sobre software libre.
 :::
 :::
 
 ::: {.column width="33%"}
 ::: {.concepto}
-#### En esta charla
+[En esta charla]{.cabeza}
 Ollama y los modelos abiertos, ESP-IDF y Arduino, Home Assistant, EnergyPlus — y Quarto, con el que está hecha esta presentación.
 :::
 :::
 
 ::: {.column width="33%"}
 ::: {.concepto .destacado}
-#### Por qué importa aquí
+[Por qué importa aquí]{.cabeza}
 Sin licencias por nodo ni nubes obligatorias: los datos y el control **se quedan en el edificio**.
 :::
 :::
@@ -343,6 +375,41 @@ Sin licencias por nodo ni nubes obligatorias: los datos y el control **se quedan
 
 ::: {.idea}
 Libre no significa solo gratis: significa **control, transparencia y reproducibilidad**.
+:::
+
+## ¿Qué es el hardware libre?
+
+::: {.definicion}
+Hardware cuyos **diseños se publican** —esquemáticos, PCB, lista de materiales, firmware— con licencias que permiten estudiarlo, modificarlo y fabricarlo.
+:::
+
+:::: {.columns}
+
+::: {.column width="33%"}
+::: {.concepto}
+[El ecosistema]{.cabeza}
+Arduino lo popularizó; hoy existe certificación (OSHWA) y una revista científica dedicada: ***HardwareX***.
+:::
+:::
+
+::: {.column width="33%"}
+::: {.concepto}
+[El caso del ESP32]{.cabeza}
+El chip es cerrado, pero su SDK es código abierto y los diseños de las placas son públicos — ecosistema abierto a ~100–350 MXN.
+:::
+:::
+
+::: {.column width="33%"}
+::: {.concepto .destacado}
+[Para la ciencia]{.cabeza}
+Un instrumento abierto se puede **replicar en otro laboratorio, auditar y reparar** — y publicar como artículo.
+:::
+:::
+
+::::
+
+::: {.idea}
+La base de la instrumentación científica barata — y de todo el hardware de esta charla.
 :::
 
 ## El ESP32: el cuerpo del agente
@@ -355,21 +422,21 @@ Microcontrolador con Wi-Fi de **100–350 pesos**, el estándar de facto del IoT
 
 ::: {.column width="33%"}
 ::: {.concepto}
-#### Sentidos
+[Sentidos]{.cabeza}
 Temperatura y humedad (±0.2 °C), CO₂, presencia por radar mmWave, corriente eléctrica, vibración y sonido — sensores de decenas a cientos de pesos.
 :::
 :::
 
 ::: {.column width="33%"}
 ::: {.concepto}
-#### Reflejos (TinyML)
+[Reflejos (TinyML)]{.cabeza}
 Modelos de < 100 kB corriendo **dentro del chip**: ocupación, desagregación de consumo (NILM), detección de fallas de HVAC por vibración.
 :::
 :::
 
 ::: {.column width="33%"}
 ::: {.concepto}
-#### Manos
+[Manos]{.cabeza}
 Control IR del minisplit (casi cualquier marca), relés y actuadores — **siempre con límites deterministas en el firmware**.
 :::
 :::
@@ -378,6 +445,41 @@ Control IR del minisplit (casi cualquier marca), relés y actuadores — **siemp
 
 ::: {.idea}
 Un nodo completo de sensado + inferencia + actuación cuesta **menos que una visita técnica**.
+:::
+
+## ¿Puede razonar el chip?
+
+::: {.definicion}
+Un LLM sí corre en un ESP32… en miniatura: de 0.26 a 29 **millones** de parámetros, a 10–22 tokens/s. Reales, pero de juguete o de dominio cerrado.
+:::
+
+:::: {.columns}
+
+::: {.column width="33%"}
+::: {.concepto}
+[Dentro del chip]{.cabeza}
+Generación de texto (260 mil parámetros, ~20 tok/s) y expertos de dominio cerrado (9–29 M). Sin conocimiento general ni buen español.
+:::
+:::
+
+::: {.column width="33%"}
+::: {.concepto}
+[El patrón productivo]{.cabeza}
+Híbrido: palabra de activación y actuación **en el MCU**; conversación y razonamiento en un **LLM local** (Ollama), por serial, MQTT o MCP.
+:::
+:::
+
+::: {.column width="33%"}
+::: {.concepto .destacado}
+[Regla práctica]{.cabeza}
+Lo determinista y la seguridad, al firmware. El lenguaje y el razonamiento, al servidor local. La nube: opcional.
+:::
+:::
+
+::::
+
+::: {.idea}
+El chip no es el cerebro: es el cuerpo con reflejos. **El cerebro es un LLM local** — y lo vamos a ver.
 :::
 
 ## Tres demos
@@ -392,21 +494,21 @@ Un ESP32 conectado por USB a esta laptop. Tres peldaños: de juguete a **operado
 
 ::: {.column width="33%"}
 ::: {.concepto}
-#### 1 · Stories
+[1 · Stories]{.cabeza}
 Un transformer de 260 mil parámetros **generando cuentos dentro del chip**, a ~20 tokens por segundo. *Puede computar.*
 :::
 :::
 
 ::: {.column width="33%"}
 ::: {.concepto}
-#### 2 · El barista
+[2 · El barista]{.cabeza}
 8.9 millones de parámetros, experto en espresso, **100 % offline** en el ESP32. *Puede saber de un dominio.*
 :::
 :::
 
 ::: {.column width="33%"}
 ::: {.concepto .destacado}
-#### 3 · El operador de color
+[3 · El operador de color]{.cabeza}
 Un LLM local (Ollama) **enciende, apaga y colorea** el LED del ESP32 por tool calling; el firmware valida cada orden. *Puede operar.*
 :::
 :::
@@ -427,21 +529,21 @@ Para investigar y controlar necesitamos lo que el anillo no da: **datos crudos, 
 
 ::: {.column width="33%"}
 ::: {.concepto}
-#### Cerrado
+[Cerrado]{.cabeza}
 Oura, Whoop, Apple Watch: excelente fisiología, pero datos en la nube del fabricante y suscripciones.
 :::
 :::
 
 ::: {.column width="33%"}
 ::: {.concepto}
-#### Intermedio
+[Intermedio]{.cabeza}
 **Cozie**: app abierta de encuestas de confort que corre sobre Apple Watch y Fitbit.
 :::
 :::
 
 ::: {.column width="33%"}
 ::: {.concepto .destacado}
-#### Abierto — hecho en el IER
+[Abierto — hecho en el IER]{.cabeza}
 Smartwatch en *HardwareX* 2025: XIAO ESP32C3, temperatura de piel + FC + encuestas horarias de confort. **49 USD, GPLv3.**
 :::
 :::
@@ -454,6 +556,22 @@ Los modelos personales ahorran **~30 % de HVAC** (hasta 45 % en verano) — y el
 
 ::: {.fuente}
 *HardwareX* 2025 (DOI 10.1016/j.ohx.2025.e00633) · Tartarini et al., *Indoor Air* (2022): F1 ≈ 0.78 con ~300 votos · pulsera de 3 puntos: 93.9 % para control HVAC (KIST)
+:::
+
+## El reloj del IER, por dentro
+
+::: {.definicion}
+Publicado en *HardwareX* (Landa et al., 2025): XIAO ESP32C3, temperatura de piel (GY-906), pulso (MAX30102), pantalla táctil redonda y vibrador — **~49 USD, licencia GPLv3**.
+:::
+
+![](img/reloj-ier.png){.foto width="55%" fig-align="center" fig-alt="Diagrama de bloques del smartwatch del IER (sensores, batería, antena, vibrador, microcontrolador, pantalla) y fotografía del reloj terminado"}
+
+::: {.idea}
+Encuestas de confort cada hora + fisiología: los datos para **modelos de confort adaptativo** — y cualquier laboratorio puede replicarlo.
+:::
+
+::: {.fuente}
+Landa et al., *HardwareX* 22 (2025) e00633 · DOI 10.1016/j.ohx.2025.e00633 · imagen: Fig. 1 del artículo
 :::
 
 ## La arquitectura para México
@@ -470,21 +588,21 @@ Todas las piezas existen y son abiertas. Falta **ensamblarlas aquí**: con nuest
 
 ::: {.column width="33%"}
 ::: {.concepto}
-#### Datos abiertos
+[Datos abiertos]{.cabeza}
 No hay conjuntos medidos de confort, consumo y ocupación en vivienda cálida mexicana. Quien los publique, define el campo.
 :::
 :::
 
 ::: {.column width="33%"}
 ::: {.concepto}
-#### Voz en español
+[Voz en español]{.cabeza}
 ESP-SR no tiene palabras de activación ni comandos en español de primera clase. Contribución directa a la comunidad global.
 :::
 :::
 
 ::: {.column width="33%"}
 ::: {.concepto}
-#### Comunidad
+[Comunidad]{.cabeza}
 No hay nodo mexicano en TinyML4D. Docencia con EnergyPlus/OpenStudio + hardware de cientos de pesos.
 :::
 :::
