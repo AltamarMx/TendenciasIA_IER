@@ -8,5 +8,5 @@ Presentación en [Quarto](https://quarto.org) (reveal.js); Python gestionado con
 ```bash
 uv sync                               # entorno Python (jupyter para celdas de código)
 uv run quarto preview index.qmd       # vista previa en vivo
-uv run quarto publish gh-pages        # publicar en GitHub Pages
+uv run quarto publish gh-pages index.qmd  # publicar en GitHub Pages
 ```

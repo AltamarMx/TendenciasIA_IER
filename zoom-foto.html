@@ -1,0 +1,24 @@
+<script>
+// Clic en una imagen .foto → se amplía en un overlay; clic o Esc → se cierra.
+document.addEventListener('click', function (e) {
+  const abierta = document.querySelector('.foto-overlay');
+  if (abierta) { abierta.remove(); return; }
+  const img = e.target.closest('img.foto');
+  if (!img) return;
+  const overlay = document.createElement('div');
+  overlay.className = 'foto-overlay';
+  const grande = document.createElement('img');
+  grande.src = img.src;
+  grande.alt = img.alt || '';
+  overlay.appendChild(grande);
+  document.body.appendChild(overlay);
+});
+document.addEventListener('keydown', function (e) {
+  if (e.key !== 'Escape') return;
+  const abierta = document.querySelector('.foto-overlay');
+  if (abierta) {
+    abierta.remove();
+    e.stopImmediatePropagation();
+  }
+}, true);
+</script>
